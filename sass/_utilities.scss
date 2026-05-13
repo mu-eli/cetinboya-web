@@ -1,5 +1,9 @@
 .bg-color--blue {
   background-color: $color-primary;
+
+  @include responsive(big-desktop) {
+    max-width: 100%;
+  }
 }
 
 .bg-color-grey {
