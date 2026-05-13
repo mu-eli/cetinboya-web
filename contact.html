@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sansita+Swashed:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDigPRiLea6qnuWAIz1HMywTosmLyXHU28&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg-color"></div>
+      <header class="navigation">
+        <div class="navigation__logo">
+          <a href="index.html" data-page="Anasayfa"
+            ><img
+              src="img/logo.png"
+              alt="Çetin Boya logo in blue color"
+              class="navigation__logo-img"
+          /></a>
+        </div>
+        <input type="checkbox" class="navigation__checkbox" id="nav-toggle" />
+        <label for="nav-toggle" class="navigation__button"
+          ><span class="navigation__icon">&nbsp;</span></label
+        >
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__header" aria-label="Main Navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a
+                href="corporate.html"
+                data-page="Kurumsal"
+                class="navigation__link"
+                >Kurumsal</a
+              >
+            </li>
+            <li class="navigation__item navigation__align">
+              <span class="navigation__align--item">
+                <a href="#" class="navigation__link navigation__dropdown-btn"
+                  >Hizmet Alanlarımız</a
+                >
+                <svg class="navigation__icon-up">
+                  <use xlink:href="img/sprite.svg#icon-chevron-thin-up"></use>
+                </svg>
+              </span>
+              <ul class="navigation__submenu">
+                <li class="navigation__submenu--list">
+                  <a
+                    href="automotive.html"
+                    data-page="automotive"
+                    class="navigation__link"
+                    >Otomotiv Boyaları</a
+                  >
+                </li>
+                <li class="navigation__submenu--list">
+                  <a
+                    href="endustry.html"
+                    data-page="endustry"
+                    class="navigation__link"
+                    >Endüstri Boyaları</a
+                  >
+                </li>
+                <li class="navigation__submenu--list">
+                  <a
+                    href="marine.html"
+                    data-page="marine"
+                    class="navigation__link"
+                    >Denizcilik Boyaları</a
+                  >
+                </li>
+                <li class="navigation__submenu--list">
+                  <a
+                    href="level.html"
+                    data-page="level"
+                    class="navigation__link"
+                    >Zemin Boyaları</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="navigation__item">
+              <a
+                href="catalog.html"
+                data-page="Catalog"
+                class="navigation__link"
+                >Ürünler/Kataloglar</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a
+                href="references.html"
+                data-page="Referanslar"
+                class="navigation__link"
+                >Referanslarımız</a
+              >
+            </li>
+          </ul>
+          <div class="navigation__btn">
+            <a href="contact.html" data-page="Iletisim" class="btn btn__contact"
+              >Bize Ulaşın</a
+            >
+          </div>
+        </nav>
+      </header>
+
+      <div class="contact">
+        <h2 class="contact__heading">Bize Ulaşmak Çok Kolay</h2>
+        <p class="contact__text">
+          Sorularınızı yanıtlamak, ihtiyaçlarınıza özel çözümler sunmak ve iş
+          birliği olanaklarını değerlendirmek için buradayız. Aşağıdaki formdan
+          bize ulaşabilir veya doğrudan iletişim bilgilerimizden birini
+          kullanabilirsiniz.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card__container">
+          <div
+            class="card__style active"
+            id="merkez"
+            data-lat="40.992330"
+            data-lng="29.127440"
+          >
+            <div class="card__icon-box">
+              <svg class="card__icon">
+                <use xlink:href="img/sprite.svg#icon-location2"></use>
+              </svg>
+              <div class="card__border"></div>
+            </div>
+
+            <div class="card__content">
+              <h4 class="card__name">Merkez Ofis & Perakende Satış Şubesi</h4>
+              <p class="card__location">
+                Ferhatpaşa Mah. Maşarif Fevzi Çakmak Caddesi No:48<br />
+                Ataşehir/Istanbul
+              </p>
+              <p class="card__number">0(216) 617 00 07</p>
+            </div>
+          </div>
+
+          <div
+            class="card__style"
+            id="merkez"
+            data-lat="40.802480"
+            data-lng="29.437800"
+          >
+            <div class="card__icon-box">
+              <svg class="card__icon">
+                <use xlink:href="img/sprite.svg#icon-location2"></use>
+              </svg>
+              <div class="card__border"></div>
+            </div>
+
+            <div class="card__content">
+              <h4 class="card__name">Şube - Hasköy Sanayi Sitesi</h4>
+              <p class="card__location">Hasköy Sanayi Sitesi, Gebze/Kocaeli</p>
+              <p class="card__number">0(262) 643 60 18</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="map"></div>
+      </div>
+
+      <div class="cont-form" id="form-tabs">
+        <h2 class="cont-form__heading">Hızlıca Bize Mesaj Bırakın</h2>
+
+        <div class="cont-form__toggle">
+          <button id="compBtn" class="cont-form__btn active">Şirket</button>
+          <button id="personBtn" class="cont-form__btn">Şahis</button>
+        </div>
+
+        <div id="form-container">
+          <form
+            id="companyForm"
+            class="form active"
+            method="POST"
+            action="iletisim.php"
+          >
+            <div class="form__cta">
+              <div class="form-details">
+                <label for="firmaAdi" class="form__label">Firma Adı*</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  name="firma-adi"
+                  id="firmaAdi"
+                  placeholder="Şirket adı giriniz"
+                  required
+                />
+              </div>
+
+              <div class="form-details">
+                <label for="firmaSektor" class="form__label"
+                  >Sektör / Faaliyet Alanı*</label
+                >
+                <input
+                  class="form__input"
+                  type="text"
+                  name="faaliyet-alanı"
+                  id="firmaSektor"
+                  placeholder="Lütfen yazın"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="cta-form">
+              <div class="form-details">
+                <label for="yetkiliKisi" class="form__label"
+                  >Yetkili Kişi Ad Soyad*</label
+                >
+                <input
+                  class="form__input"
+                  type="text"
+                  name="ad-soyadi"
+                  id="yetkiliKisi"
+                  placeholder="Jane Doe"
+                  required
+                />
+              </div>
+
+              <div class="form-details">
+                <label for="sirketEmail" class="form__label"
+                  >E-posta Adresi*</label
+                >
+                <input
+                  class="form__input"
+                  type="email"
+                  name="email"
+                  id="sirketEmail"
+                  placeholder="Lütfen yazın"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form__textarea-box">
+              <label for="sirketMessage" class="form__label">Mesajınız</label>
+              <textarea
+                class="form__textarea"
+                required
+                id="sirketMessage"
+                name="sirketMessage"
+                placeholder="Sorunuz, talebiniz ya da iş birliği fikrinizi buraya yazabilirsiniz"
+              ></textarea>
+            </div>
+
+            <input type="text" name="website" style="display: none" />
+
+            <button type="submit" class="column-span btn btn__submit">
+              Gönder
+            </button>
+
+            <div id="form-message-sirket" class="form__message"></div>
+          </form>
+
+          <form
+            id="personForm"
+            class="form sahis-form"
+            method="POST"
+            action="iletisim.php"
+          >
+            <div class="column-span form__details">
+              <label for="adiSoyadi" class="form__label"
+                >Adınız Soyadınız*</label
+              >
+              <input
+                class="form__input"
+                type="text"
+                name="ad-soyadi"
+                id="adiSoyadi"
+                placeholder="Kullanıcı adı giriniz"
+                required
+              />
+            </div>
+
+            <div class="column-span form__details">
+              <label for="email" class="form__label">E-posta Adresiniz*</label>
+              <input
+                class="form__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Lütfen yazın"
+                required
+              />
+            </div>
+
+            <div class="column-span form__details">
+              <label for="number" class="form__label">Telefon Numaranız*</label>
+              <input
+                class="form__input"
+                type="tel"
+                name="tel-numara"
+                id="number"
+                placeholder="Lütfen yazın"
+                required
+              />
+            </div>
+
+            <div class="form__textarea-box">
+              <label for="sahisMessage" class="form__label"
+                >Konu / Talep Türü</label
+              >
+              <textarea
+                class="form__textarea"
+                required
+                name="sahisMessage"
+                id="sahisMessage"
+                placeholder="Sorunuz, talebiniz ya da iş birliği fikrinizi buraya yazabilirsiniz"
+              ></textarea>
+            </div>
+
+            <input type="text" name="website" style="display: none" />
+
+            <button type="submit" class="column-span btn btn__submit">
+              Gönder
+            </button>
+
+            <div id="form-message-sahis" class="form__message"></div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__logo">
+          <img
+            src="img/logo.png"
+            alt="çetinboya official company logo"
+            class="footer__img"
+          />
+        </div>
+
+        <div class="footer__nav-box">
+          <div class="footer__col--1">
+            <h3 class="footer__heading">KURUMSAL</h3>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li>
+                  <a href="corporate.html" class="footer__link">Hakkımızda</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer__col--2">
+            <h3 class="footer__heading">HİZMET ALANLARIMIZ</h3>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li>
+                  <a href="otomotiv.html" class="footer__link"
+                    >Otomotiv Boya ve Kaplamları</a
+                  >
+                </li>
+                <li>
+                  <a href="endustri.html" class="footer__link">
+                    Genel Sanayi Boya ve Kaplamları</a
+                  >
+                </li>
+                <li>
+                  <a href="denizcilik.html" class="footer__link">
+                    Denizcilik Boya ve Kaplamları</a
+                  >
+                </li>
+                <li>
+                  <a href="zemin.html" class="footer__link">
+                    Ağır Sanayi Boya ve Kaplamları</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer__col--3">
+            <h3 class="footer__heading">İLETİŞİM</h3>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="contact.html#merkez" class="footer__link">
+                    Merkez Ofis & Perakende Satiş Şubesi
+                    <span class="footer__location">Ataşehir / İstanbul</span>
+                    <span class="footer__number">0(216) 617 00 07</span></a
+                  >
+                </li>
+
+                <li class="footer__item">
+                  <a href="contact.html#şube" class="footer__link">
+                    Şube- Hasköy Sanayi Sitesi
+                    <span class="footer__location">Hasköy / Istanbul</span>
+                    <span class="footer__number">0(262) 643 60 18 </span></a
+                  >
+                </li>
+
+                <li>
+                  <a href="mailto:info@cetinboya.net" class="footer__link"
+                    >info@cetinboya.net</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="footer__socials-box">
+          <div class="footer__socials">
+            <a href="#" target="_blank"
+              ><svg class="footer__icon">
+                <use xlink:href="img/sprite.svg#icon-linkedin"></use></svg
+            ></a>
+
+            <a
+              href="https://www.instagram.com/ctnboya?igsh=MTlzeG94ZzB5d3ZycA=="
+              target="_blank"
+              ><svg class="footer__icon">
+                <use xlink:href="img/sprite.svg#icon-instagram"></use></svg
+            ></a>
+          </div>
+
+          <p class="footer__copyright">
+            &copy;<span class="year">1992</span> — CETIN BOYA
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

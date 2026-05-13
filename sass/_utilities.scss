@@ -1,0 +1,23 @@
+.bg-color--blue {
+  background-color: $color-primary;
+}
+
+.bg-color-grey {
+  background-color: $color-grey-bg-2;
+}
+
+.align {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.column-span {
+  grid-column: 1 / -1;
+}
+
+.img-hide {
+  @include responsive(tablet-portrait) {
+    display: none;
+  }
+}

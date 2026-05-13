@@ -1,0 +1,981 @@
+/////////////////////////////
+/// BUTTON
+////////////////////////////
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: $radius-small;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+
+  &__contact,
+  &__blue {
+    color: $color-white;
+    background-color: $color-primary;
+    transition: all 0.3s ease-in;
+    border: 2px solid transparent;
+
+    &:hover,
+    &:hover {
+      border: 2px solid $color-primary;
+      background: none;
+      color: $color-primary;
+    }
+  }
+
+  &__blue {
+    @include responsive(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__contact {
+    @include responsive(tablet-land) {
+      font-size: 2.4rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 2rem;
+    }
+  }
+
+  &__contact.active {
+    border: 2px solid $color-primary;
+    background: none;
+    color: $color-primary;
+  }
+
+  &__white,
+  &__board {
+    font-weight: 600;
+    color: $color-primary;
+    background-color: $color-white;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      background: none;
+      color: $color-white;
+      border: 2px solid $color-white;
+    }
+  }
+
+  &__board {
+    @include responsive(tablet-portrait) {
+      font-size: 2rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__references {
+    width: 45%;
+    color: $color-white;
+    background-color: $color-primary;
+  }
+
+  &__consult,
+  &__submit {
+    font-weight: 600;
+    color: $color-white;
+    background-color: $color-primary;
+    border: 2px solid transparent;
+    transition: all 0.6s ease-in;
+
+    &:hover {
+      border: 2px solid $color-primary;
+      background: none;
+      color: $color-primary;
+    }
+  }
+
+  &__consult {
+    @include responsive(tablet-portrait) {
+      font-size: 2rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__submit {
+    max-height: 9rem;
+    margin: 0 auto;
+    text-align: center;
+
+    @include responsive(laptop-land) {
+      width: 25%;
+    }
+
+    @include responsive(tablet-portrait) {
+      font-size: 2rem;
+      width: 50%;
+    }
+  }
+
+  &__product {
+    color: $color-primary;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      color: $color-blue-dark-6;
+      border: 2px solid $color-blue-dark-6;
+    }
+
+    @include responsive(laptop-land) {
+      text-wrap: nowrap;
+    }
+
+    @include responsive(phone) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.tag {
+  display: inline-block;
+  line-height: 1.4;
+  border-radius: $radius-small;
+  padding: 0.4rem 0.8rem;
+
+  @include responsive(phone) {
+    font-size: 1.2rem;
+  }
+
+  &__hero {
+    background-color: $color-white;
+    text-transform: uppercase;
+    color: $color-primary;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/////////////////////////////
+/// FEATURES
+////////////////////////////
+
+.features {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  column-gap: 6.4rem;
+  row-gap: 6.4rem;
+  padding: 8rem 14.8rem;
+
+  @include responsive(laptop-land) {
+    grid-template-columns: repeat(auto-fit, minmax(19.2rem, 1fr));
+    padding: 4.8rem 3.2rem;
+  }
+
+  @include responsive(tablet-land) {
+    grid-template-columns: repeat((auto-fit, minmax(15.8rem, 1fr)));
+    column-gap: 2.4rem;
+    padding: 3.2rem;
+  }
+
+  @include responsive(tablet-portrait) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 6.4rem 1.6rem;
+    column-gap: 3.2rem;
+    row-gap: 4rem;
+  }
+
+  @include responsive(phone) {
+    padding: 4rem 1.6rem;
+    column-gap: 1.6rem;
+  }
+
+  &__icon-box {
+    position: relative;
+    margin-bottom: 2.4rem;
+
+    @include responsive(phone) {
+      margin-bottom: 1.2rem;
+    }
+  }
+
+  &__icon {
+    fill: $color-primary;
+    width: 2.3rem;
+    height: 2.4rem;
+
+    @include responsive(phone) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__icon--corp {
+    fill: $color-white;
+  }
+
+  &__icon-border::after {
+    display: inline-block;
+    content: "";
+    height: 1.5px;
+    width: 60%;
+    background-color: $color-grey-light-1;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+  }
+
+  &__heading {
+    color: $color-blue-dark-5;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+
+    @include responsive(laptop-land) {
+      font-size: 1.4rem;
+    }
+
+    @include responsive(tablet-land) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__text {
+    color: $color-blue-dark-5;
+    line-height: 1.4;
+
+    @include responsive(tablet-land) {
+      font-size: 1.4rem;
+    }
+
+    @include responsive(tablet-portrait) {
+      font-size: 1.6rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__text--corp {
+    color: $color-white;
+
+    @include responsive(phone) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__heading--corp {
+    color: $color-white;
+
+    @include responsive(tablet-portrait) {
+      font-size: 1.8rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/////////////////////////////
+/// CONSULTATION
+////////////////////////////
+
+.consult {
+  grid-column: 1 / -1;
+  color: $color-blue-dark-6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  padding: 8rem 14.8rem;
+
+  @include responsive(tablet-land) {
+    padding: 4rem 3.2rem 4.8rem;
+  }
+
+  @include responsive(tablet-portrait) {
+    padding: 4rem 1.6rem;
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 600;
+
+    @include responsive(phone) {
+      font-size: 2rem;
+    }
+  }
+
+  &__subtext {
+    text-align: center;
+    margin-bottom: 3.2rem;
+
+    @include responsive(tablet-portrait) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    align-self: stretch;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21.9rem, 1fr));
+    column-gap: 1.6rem;
+
+    @include responsive(tablet-portrait) {
+      grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+      column-gap: 2.4rem;
+    }
+
+    @include responsive(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 1.6rem;
+    }
+
+    & > *:last-child {
+      @include responsive(phone) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__icon-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2.4rem;
+  }
+
+  &__icon {
+    fill: $color-primary;
+    width: 4rem;
+    height: 4rem;
+
+    @include responsive(phone) {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+
+  &__icon-border::after {
+    display: inline-block;
+    content: "";
+    height: 1.5px;
+    width: 60%;
+    background-color: $color-grey-light-1;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+  }
+
+  &__icon-small {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: $color-primary;
+    position: relative;
+
+    @include responsive(phone) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__text {
+    @include responsive(phone) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 2.4rem;
+  }
+}
+
+/////////////////////////////
+/// IMAGE TEXT
+////////////////////////////
+
+.img-text {
+  color: $color-white;
+  line-height: 1.2;
+  position: absolute;
+  top: 50%;
+  left: 14.8rem;
+  transform: translateY(-50%);
+
+  @include responsive(tablet-land) {
+    left: 4%;
+  }
+
+  @include responsive(tablet-portrait) {
+    left: 1.6rem;
+
+    br {
+      display: none;
+    }
+  }
+
+  &--small {
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+
+    @include responsive(phone) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &--big {
+    font-size: 4.8rem;
+    font-weight: 700;
+
+    @include responsive(phone) {
+      font-size: 3rem;
+    }
+  }
+}
+
+/////////////////////////////
+/// 1 of 5 COLUMN
+////////////////////////////
+
+.col-5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  column-gap: 6.4rem;
+  row-gap: 6.4rem;
+  padding: 8rem 14.8rem;
+  color: $color-blue-dark-6;
+
+  @include responsive(laptop-land) {
+    padding: 6.4rem 3.2rem;
+    column-gap: 2rem;
+    row-gap: 2rem;
+  }
+
+  @include responsive(tablet-land) {
+    grid-template-columns: repeat(auto-fit, minmax(22.6rem, 1fr));
+    column-gap: 3.2rem;
+    row-gap: 2.4rem;
+    padding: 3.2rem 1.6rem;
+  }
+
+  @include responsive(tablet-portrait) {
+    grid-template-columns: repeat(auto-fit, minmax(20.8rem, 1fr));
+    column-gap: 3.2rem;
+    row-gap: 4rem;
+    padding: 6.4rem 1.6rem;
+  }
+
+  @include responsive(phone) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4rem 1.6rem;
+  }
+
+  &__icon-box {
+    position: relative;
+    margin-bottom: 2.4rem;
+  }
+
+  &__icon {
+    fill: $color-primary;
+    width: 2.3rem;
+    height: 2.4rem;
+
+    @include responsive(phone) {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__icon-border::after {
+    display: inline-block;
+    content: "";
+    height: 1.5px;
+    width: 13rem;
+    background-color: $color-grey-light-1;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+
+    @include responsive(laptop-land) {
+      width: 10rem;
+    }
+  }
+
+  &__heading {
+    font-size: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+
+    @include responsive(tablet-portrait) {
+      font-size: 1.8rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__text {
+    line-height: 1.4;
+
+    @include responsive(phone) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/////////////////////////////
+/// 1 of 3 COLUMN
+////////////////////////////
+
+.col-3 {
+  color: $color-blue-dark-6;
+  background-color: $color-grey-bg-1;
+  height: 56rem;
+  padding: 0 14.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33.2rem, 1fr));
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.4rem;
+  row-gap: 2.4rem;
+  position: relative;
+
+  @include responsive(laptop-land) {
+    grid-template-columns: repeat(auto-fit, minmax(26.6rem, 1fr));
+    padding: 0 3.2rem;
+    column-gap: 3.2rem;
+  }
+
+  @include responsive(tablet-land) {
+    grid-template-columns: repeat(2, 1fr);
+    height: 49.8rem;
+    padding: 0 4rem;
+  }
+
+  @include responsive(tablet-portrait) {
+    grid-template-columns: auto;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    height: 79.8rem;
+    padding: 2.4rem 3.2rem;
+    row-gap: 4rem;
+  }
+
+  @include responsive(phone) {
+    height: 66.8rem;
+    padding: 4.8rem 3.2rem;
+    grid-template-rows: max-content 1fr max-content;
+  }
+
+  &__img-box {
+    align-self: flex-start;
+  }
+
+  &__img {
+    display: block;
+    max-width: 30.5rem;
+    object-fit: cover;
+    border-radius: $radius-big;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include responsive(laptop-land) {
+      left: 33%;
+    }
+
+    @include responsive(tablet-land) {
+      left: auto;
+    }
+
+    @include responsive(tablet-portrait) {
+      max-width: 30rem;
+    }
+
+    @include responsive(phone) {
+      max-width: 21.8rem;
+    }
+
+    &--1 {
+      transform: translateY(-50%) rotate(4deg);
+      z-index: 10;
+
+      @include responsive(tablet-portrait) {
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(4deg);
+      }
+    }
+
+    &--2 {
+      transform: translateY(-50%) rotate(12deg);
+      z-index: 9;
+
+      @include responsive(tablet-portrait) {
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(12deg);
+      }
+    }
+    &--3 {
+      transform: translateY(-50%) rotate(-8deg);
+      z-index: 8;
+
+      @include responsive(tablet-portrait) {
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-8deg);
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    @include responsive(laptop-land) {
+      align-self: center;
+    }
+
+    @include responsive(tablet-land) {
+      align-self: self-start;
+    }
+
+    @include responsive(tablet-portrait) {
+      justify-self: center;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    gap: 1.6rem;
+
+    @include responsive(tablet-land) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include responsive(phone) {
+      align-items: center;
+    }
+  }
+
+  &__text-left {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    width: 68%;
+
+    @include responsive(laptop-land) {
+      width: 85%;
+      justify-self: center;
+    }
+
+    @include responsive(tablet-land) {
+      width: 100%;
+      align-self: end;
+    }
+
+    @include responsive(tablet-portrait) {
+      justify-self: center;
+      text-align: center;
+    }
+
+    @include responsive(phone) {
+      width: 100%;
+      padding: 0 3.2rem;
+    }
+  }
+
+  &__text-right {
+    line-height: 1.4;
+    width: 86%;
+
+    @include responsive(tablet-portrait) {
+      display: none;
+    }
+  }
+}
+
+/////////////////////////////
+/// 1 of 3 COLUMN SERVICES
+////////////////////////////
+
+.services-col-3 {
+  padding: 8rem 14.8rem 6.4rem;
+  color: $color-blue-dark-6;
+
+  @include responsive(tablet-land) {
+    grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
+    padding: 4.8rem 1.6rem;
+  }
+
+  @include responsive(tablet-portrait) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    padding: 6.4rem 1.6rem 4.8rem;
+    row-gap: 2.4rem;
+  }
+
+  @include responsive(phone) {
+    grid-template-columns: 1fr;
+    row-gap: 2.4rem;
+    padding: 4rem 1.6rem 4.8rem;
+  }
+
+  &__heading {
+    grid-column: 1 / -1;
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 4rem;
+
+    @include responsive(tablet-land) {
+      margin-bottom: 2.4rem;
+    }
+
+    @include responsive(tablet-portrait) {
+      margin-bottom: 3.2rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 2.4rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(37rem, 1fr));
+    column-gap: 1.6rem;
+    row-gap: 1.6rem;
+  }
+}
+
+/////////////////////////////
+/// SERVICES CARDS
+////////////////////////////
+
+.services {
+  &__card-1,
+  &__card-2,
+  &__card-3,
+  &__card-4 {
+    overflow: hidden;
+    border-radius: $radius-big;
+  }
+
+  &__card-1 {
+    background-color: $color-grey-light;
+  }
+
+  &__card-2 {
+    background-color: $color-green-dark;
+  }
+
+  &__card-3 {
+    background-color: $color-blue-dark-6;
+  }
+
+  &__card-4 {
+    background-color: $color-grey-dark;
+  }
+
+  &__link:hover &__title {
+    text-decoration: underline;
+  }
+
+  &__img-box {
+    overflow: hidden;
+  }
+
+  &__img {
+    display: block;
+    object-fit: cover;
+    height: 50vh;
+    width: 100%;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    transition: all 10s;
+  }
+
+  &__content-box {
+    padding: 2.4rem 2rem 2rem;
+
+    @include responsive(tablet-portrait) {
+      padding: 2.4rem 2rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: $color-white;
+    line-height: 1.6;
+    margin-bottom: 4rem;
+
+    @include responsive(phone) {
+      font-size: 2.4rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $color-white;
+    line-height: 1.6;
+
+    @include responsive(tablet-portrait) {
+      font-size: 1.8rem;
+    }
+
+    @include responsive(phone) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+/////////////////////////////
+/// LOCATION CARDS
+////////////////////////////
+
+.card {
+  grid-column: 1 / -1;
+  padding: 6.4rem 14.8rem 5.4rem;
+  background-color: $color-grey-bg-2;
+
+  @include responsive(laptop-land) {
+    padding: 4rem 3.2rem;
+  }
+
+  @include responsive(tablet-land) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4rem 3.2rem;
+  }
+
+  @include responsive(tablet-portrait) {
+    padding: 4rem 1.6rem;
+  }
+
+  @include responsive(phone) {
+    grid-template-columns: 1fr;
+    row-gap: 1.2rem;
+    padding: 3.2rem 1.6rem;
+  }
+
+  &__container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(47.2rem, 1fr));
+    column-gap: 1.6rem;
+
+    @include responsive(laptop-land) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    @include responsive(tablet-land) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    @include responsive(phone) {
+      grid-template-columns: 1fr;
+      row-gap: 1.2rem;
+    }
+  }
+
+  &__style {
+    color: $color-blue-dark-6;
+    background-color: $color-white;
+    border-radius: $radius-big;
+    padding: 3.2rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+
+    @include responsive(tablet-portrait) {
+      padding: 1.6rem;
+    }
+  }
+
+  &__style.active {
+    color: $color-white;
+    background-color: $color-primary;
+  }
+
+  &__style.active &__icon {
+    fill: $color-white;
+  }
+
+  &__icon-box {
+    margin-bottom: 2.4rem;
+    position: relative;
+  }
+
+  &__icon {
+    fill: $color-blue-dark-6;
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: all 0.3s ease;
+  }
+
+  &__style:hover &__icon {
+    fill: $color-white;
+  }
+
+  &__border::after {
+    display: inline-block;
+    content: "";
+    height: 1.5px;
+    width: 13rem;
+    background-color: $color-grey-light-1;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__name {
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  &__location,
+  &__number {
+    font-weight: 300;
+    line-height: 1.4;
+  }
+}

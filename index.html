@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Çetin Boya, 30 yıllık deneyimiyle otomotiv, endüstri, denizcilik ve zemin boyaları alanında yüksek performanslı çözümler sunar. İstanbul ve Kocaeli merkezli güçlü lojistik ağı ile hızlı teslimat ve renk danışmanlığı hizmetleriyle yanınızda."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sansita+Swashed:wght@300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="script.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg-color"></div>
+      <header class="navigation">
+        <div class="navigation__logo">
+          <a href="index.html" data-page="Anasayfa"
+            ><img
+              src="img/logo.png"
+              alt="Çetin Boya logo in blue color"
+              class="navigation__logo-img"
+          /></a>
+        </div>
+        <input type="checkbox" class="navigation__checkbox" id="nav-toggle" />
+        <label for="nav-toggle" class="navigation__button"
+          ><span class="navigation__icon">&nbsp;</span></label
+        >
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__header" aria-label="Main Navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a
+                href="corporate.html"
+                data-page="Kurumsal"
+                class="navigation__link"
+                >Kurumsal</a
+              >
+            </li>
+            <li class="navigation__item navigation__align">
+              <span class="navigation__align--item">
+                <a href="#" class="navigation__link navigation__dropdown-btn"
+                  >Hizmet Alanlarımız</a
+                >
+                <svg class="navigation__icon-up">
+                  <use xlink:href="img/sprite.svg#icon-chevron-thin-up"></use>
+                </svg>
+              </span>
+              <ul class="navigation__submenu">
+                <li class="navigation__submenu--list">
+                  <a
+                    href="automotive.html"
+                    data-page="automotive"
+                    class="navigation__link"
+                    >Otomotiv Boyaları</a
+                  >
+                </li>
+                <li class="navigation__submenu--list">
+                  <a
+                    href="endustry.html"
+                    data-page="endustry"
+                    class="navigation__link"
+                    >Endüstri Boyaları</a
+                  >
+                </li>
+                <li class="navigation__submenu--list">
+                  <a
+                    href="marine.html"
+                    data-page="marine"
+                    class="navigation__link"
+                    >Denizcilik Boyaları</a
+                  >
+                </li>
+                <li class="navigation__submenu--list">
+                  <a
+                    href="level.html"
+                    data-page="level"
+                    class="navigation__link"
+                    >Zemin Boyaları</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="navigation__item">
+              <a
+                href="catalog.html"
+                data-page="Catalog"
+                class="navigation__link"
+                >Ürünler/Kataloglar</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a
+                href="references.html"
+                data-page="Referanslar"
+                class="navigation__link"
+                >Referanslarımız</a
+              >
+            </li>
+          </ul>
+          <div class="navigation__btn">
+            <a href="contact.html" data-page="Iletisim" class="btn btn__contact"
+              >Bize Ulaşın</a
+            >
+          </div>
+        </nav>
+      </header>
+
+      <div class="hero">
+        <div class="hero__text-box">
+          <p class="tag tag__hero">30 yildir</p>
+          <h1 class="hero__heading">Her Yüzeyde İzimiz var.</h1>
+          <p class="hero__text">
+            Otomotivden endüstriye, denizcilikten zemin kaplamalarına kadar;
+            üretim sürecinizin ihtiyaç duyduğu tüm boya çözümlerini tek çatı
+            altında sunuyoruz.
+          </p>
+        </div>
+
+        <div class="hero__img--container">
+          <img
+            src="img/hero-img--1.jpg"
+            alt="a repairman in uniform paints car in garage"
+            class="hero__img"
+          />
+          <img
+            src="img/hero-img--2.jpg"
+            alt="worker on top of scaffolding painting boat in shipyard"
+            class="hero__img"
+          />
+          <img
+            src="img/hero-img--3.png"
+            alt="a man painitng a car"
+            class="hero__img"
+          />
+          <img
+            src="img/hero-img--4.jpg"
+            alt="a man in uniform is in workstation painting an agriculture equipment"
+            class="hero__img"
+          />
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="features__box">
+          <div class="features__icon-box">
+            <svg class="features__icon">
+              <use xlink:href="img/sprite.svg#icon-attachment"></use>
+            </svg>
+            <span class="features__icon-border">&nbsp;</span>
+          </div>
+
+          <h3 class="features__heading">Hızlı Sonuçlar</h3>
+          <p class="features__text">
+            İhtiyacınız olan ürünleri doğru zamanda, doğru miktarda teslim
+            ederek iş akışınızı aksatmadan destekliyoruz.
+          </p>
+        </div>
+
+        <div class="features__box">
+          <div class="features__icon-box">
+            <svg class="features__icon">
+              <use xlink:href="img/sprite.svg#icon-attachment"></use>
+            </svg>
+            <span class="features__icon-border">&nbsp;</span>
+          </div>
+          <h3 class="features__heading">Geniş Teslim Ağı</h3>
+          <p class="features__text">
+            İstanbul ve Kocaeli merkezli lojistik ağımızla, üretim noktalarınıza
+            kesintisiz ve hızlı erişim sağlıyoruz.
+          </p>
+        </div>
+
+        <div class="features__box">
+          <div class="features__icon-box">
+            <svg class="features__icon">
+              <use xlink:href="img/sprite.svg#icon-attachment"></use>
+            </svg>
+            <span class="features__icon-border">&nbsp;</span>
+          </div>
+          <h3 class="features__heading">Seçkin Üreticiler</h3>
+          <p class="features__text">
+            Yalnızca dünya standartlarında üretim yapan boya markalarıyla iş
+            birliği yapar, her üründe maksimum güven sunarız.
+          </p>
+        </div>
+
+        <div class="features__box">
+          <div class="features__icon-box">
+            <svg class="features__icon">
+              <use xlink:href="img/sprite.svg#icon-attachment"></use>
+            </svg>
+            <span class="features__icon-border">&nbsp;</span>
+          </div>
+          <h3 class="features__heading">Esnek Çözümler</h3>
+          <p class="features__text">
+            Renk danışmanlığından özel karışıma, küçük adetli talepten büyük
+            ölçekli projelere kadar sürecinize uyum sağlarız.
+          </p>
+        </div>
+      </div>
+
+      <div class="banner">
+        <p class="banner__text">
+          Boyanın Ötesinde Hizmet Yaklaşımımız Yakından Tanıyın
+        </p>
+        <div class="banner__btn">
+          <a href="corporate.html" class="btn btn__white">Bize Tanıyın</a>
+        </div>
+      </div>
+
+      <div class="services">
+        <h2 class="services__heading">Hizmet Alanlarımız</h2>
+
+        <div class="services__container">
+          <!-- <h2 class="services__heading">Hizmet Alanlarımız</h2> -->
+
+          <div class="services__card-1">
+            <a href="automotive.html" class="services__link">
+              <figure class="services__img-box">
+                <img
+                  src="img/card-img--1.jpg"
+                  alt="a person holds cards with different colors"
+                  class="services__img"
+                />
+              </figure>
+
+              <div class="services__content-box">
+                <p class="services__title">OTOMOTİV BOYA VE KAPLAMALARI</p>
+                <p class="services__text">
+                  Metal ve plastik uyumu yüksek otomotiv boyaları. Özel renk
+                  karışımı ve renk danışmanlığı hizmeti. Seri üretime uygun,
+                  dayanıklı kaplama çözümleri.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="services__card-2">
+            <a href="endustry.html" class="services__link">
+              <figure class="services__img-box">
+                <img
+                  src="img/hero-img--4.jpg"
+                  alt="a man in uniform is in workstation painting an agriculture equipment"
+                  class="services__img"
+                />
+              </figure>
+
+              <div class="services__content-box">
+                <p class="services__title">GENEL SANAYİ BOYA VE KAPLAMALARI</p>
+                <p class="services__text">
+                  Isı, kimyasal ve aşınmaya dayanıklı sanayi boyaları. Her
+                  sektöre uygun geniş ürün yelpazesi. Miktara özel esnek üretim
+                  imkanları.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="services__card-3">
+            <a href="marine.html" class="services__link">
+              <figure class="services__img-box">
+                <img
+                  src="img/ref-img-1.jpg"
+                  alt="a man in uniform painting a boat"
+                  class="services__img"
+                />
+              </figure>
+
+              <div class="services__content-box">
+                <p class="services__title">DENİZCİLİK BOYA VE KAPLAMALARI</p>
+                <p class="services__text">
+                  Tuzlu suya ve kimyasallara dayanıklı denizcilik
+                  boyaları. Epoksi ve poliüretan bazlı uzun ömürlü
+                  sistemler. Yat, tekne ve gemiler için maksimum koruma.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="services__card-4">
+            <a href="level.html" class="services__link">
+              <figure class="services__img-box">
+                <img
+                  src="img/card-img--4.jpg"
+                  alt="concrete pier with yellow designations close up"
+                  class="services__img"
+                />
+              </figure>
+
+              <div class="services__content-box">
+                <p class="services__title">AĞIR SANAYİ BOYA VE KAPLAMALARI</p>
+                <p class="services__text">
+                  Endüstriyel zeminler için aşınmaya dayanıklı boyalar. Yüksek
+                  darbe ve kimyasal direnci. Ağır koşullara özel uzun ömürlü
+                  çözümler.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3 column-span">
+        <p class="col-3__text-left">
+          Nerede üretim varsa, orada tecrübemiz var.
+        </p>
+        <div class="col-3__img-box">
+          <img
+            src="img/group-img--4.png"
+            alt="collection of high-quality automotive paints and protective coatings"
+            class="col-3__img col-3__img--1"
+          />
+          <img
+            src="img/group-img--2.png"
+            alt="collection of high-quality automotive paints and protective coatings"
+            class="col-3__img col-3__img--2"
+          />
+          <img
+            src="img/group-img--3.png"
+            alt="collection of high-quality automotive paints and protective coatings"
+            class="col-3__img col-3__img--3"
+          />
+        </div>
+
+        <div class="col-3__box">
+          <p class="col-3__text-right">
+            Farklı sektörlerden markalar, yüksek performanslı boya
+            sistemlerimizi tercih etti. Uygulama örneklerimize göz atın.
+          </p>
+          <div class="col-3__btn">
+            <a href="references.html" class="btn btn__blue">Referanslarımız</a>
+            <a href="catalog.html" class="btn btn__product">Ürün Kataloğu</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dealership dealership__container">
+        <h2 class="dealership__text">
+          Geniş ürün yelpazemiz ve güçlü tedarik zincirimiz ile sektördeki lider
+          boya ve zımpara markalarının bayiliğini yapmaktayız.
+        </h2>
+
+        <div class="dealership__box">
+          <a href="https://www.akzonobelkemipol.com.tr/" target="_blank"
+            ><img
+              src="img/akzonobel.png"
+              alt="akzonobel official company logo"
+              class="dealership__img"
+          /></a>
+          <a
+            href="https://www.sikkensvr.com/tr/%C3%9CR%C3%9CNLER"
+            target="_blank"
+            ><img
+              src="img/sikkens.png"
+              alt="sikkens official company logo"
+              class="dealership__img"
+          /></a>
+          <a href="https://www.dynacoat.com.tr/tr" target="_blank"
+            ><img
+              src="img/dynocoat.png"
+              alt="dynacoat official company logo"
+              class="dealership__img"
+          /></a>
+          <a href="https://salcomix.akripol.com.tr/" target="_blank"
+            ><img
+              src="img/salcomix.png"
+              alt="salcomix official company logo"
+              class="dealership__img"
+          /></a>
+          <a href="https://www.carboline.com.tr/" target="_blank"
+            ><img
+              src="img/carboline.png"
+              alt="carboline official company logo"
+              class="dealership__img"
+          /></a>
+          <a href="https://akisboya.com.tr/" target="_blank"
+            ><img
+              src="img/akis.png"
+              alt="akiş official company logo"
+              class="dealership__img"
+          /></a>
+          <a href="https://www.international-pc.com/" target="_blank"
+            ><img
+              src="img/international.png"
+              alt="international official company logo"
+              class="dealership__img"
+          /></a>
+          <a href="https://indasa-direct.com/" target="_blank"
+            ><img
+              src="img/ındasa.png"
+              alt="Indasa official company logo"
+              class="dealership__img"
+          /></a>
+          <a
+            href="https://www.farecla.com/"
+            target="_blank"
+            class="dealership__link"
+            ><img
+              src="img/farcela.png"
+              alt="farecla official company logo"
+              class="dealership__img dealership__img-span"
+          /></a>
+          <a
+            href="https://www.mirka.com/tr-tr/"
+            target="_blank"
+            class="dealership__link"
+            ><img
+              src="img/mirka.png"
+              alt="mirka official company logo"
+              class="dealership__img"
+          /></a>
+        </div>
+      </div>
+
+      <div class="consult">
+        <svg class="consult__icon">
+          <use xlink:href="img/sprite.svg#icon-paint-format"></use>
+        </svg>
+        <h2 class="consult__heading">Renk Danışmanlığı</h2>
+        <p class="consult__subtext">
+          Üretim alanınıza, yüzey tipinize ve ihtiyacınıza göre en uygun boya
+          sistemini birlikte seçelim.<br />Renk karışımı, yüzey uyumu ve ürün
+          önerisi için bize ulaşmanız yeterli.
+        </p>
+
+        <div class="consult__container">
+          <div class="consult__text-box">
+            <div class="consult__icon-box">
+              <svg class="consult__icon-small">
+                <use xlink:href="img/sprite.svg#icon-attachment"></use>
+              </svg>
+              <span class="consult__icon-border">&nbsp;</span>
+            </div>
+            <p class="consult__text">
+              İsteğinize göre üretim tesisinizde ya da firmamızda
+            </p>
+          </div>
+
+          <div class="consult__text-box">
+            <div class="consult__icon-box">
+              <svg class="consult__icon-small">
+                <use xlink:href="img/sprite.svg#icon-attachment"></use>
+              </svg>
+              <span class="consult__icon-border">&nbsp;</span>
+            </div>
+            <p class="consult__text">
+              Üretimini yaptığınız ürün materyali üzerinde örnekleyerek
+            </p>
+          </div>
+
+          <div class="consult__text-box">
+            <div class="consult__icon-box">
+              <svg class="consult__icon-small">
+                <use xlink:href="img/sprite.svg#icon-attachment"></use>
+              </svg>
+              <span class="consult__icon-border">&nbsp;</span>
+            </div>
+            <p class="consult__text">
+              Önerileriniz doğrultusunda en iyi boya çözümünü bularak
+            </p>
+          </div>
+        </div>
+
+        <div class="consult__btn">
+          <a href="contact.html#form-tabs" class="btn btn__consult">
+            Ücretsiz Danışmanlık Al
+          </a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__logo">
+          <img
+            src="img/logo.png"
+            alt="çetinboya official company logo"
+            class="footer__img"
+          />
+        </div>
+
+        <div class="footer__nav-box">
+          <div class="footer__col--1">
+            <h3 class="footer__heading">KURUMSAL</h3>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li>
+                  <a href="corporate.html" class="footer__link">Hakkımızda</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer__col--2">
+            <h3 class="footer__heading">HİZMET ALANLARIMIZ</h3>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li>
+                  <a href="automotive.html" class="footer__link"
+                    >Otomotiv Boya ve Kaplamları</a
+                  >
+                </li>
+                <li>
+                  <a href="endustry.html" class="footer__link">
+                    Genel Sanayi Boya ve Kaplamları</a
+                  >
+                </li>
+                <li>
+                  <a href="marine.html" class="footer__link">
+                    Denizcilik Boya ve Kaplamları</a
+                  >
+                </li>
+                <li>
+                  <a href="level.html" class="footer__link">
+                    Ağır Sanayi Boya ve Kaplamları</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer__col--3">
+            <h3 class="footer__heading">İLETİŞİM</h3>
+            <nav class="footer__nav">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="contact.html#merkez" class="footer__link">
+                    Merkez Ofis & Perakende Satiş Şubesi
+                    <span class="footer__location">Ataşehir / İstanbul</span>
+                    <span class="footer__number">0(216) 617 00 07</span></a
+                  >
+                </li>
+
+                <li class="footer__item">
+                  <a href="contact.html#haskoy" class="footer__link">
+                    Şube- Hasköy Sanayi Sitesi
+                    <span class="footer__location">Hasköy / Istanbul</span>
+                    <span class="footer__number">0(262) 643 60 18 </span></a
+                  >
+                </li>
+
+                <li>
+                  <a href="mailto:info@cetinboya.net" class="footer__link"
+                    >info@cetinboya.net</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="footer__socials-box">
+          <div class="footer__socials">
+            <a href="#" target="_blank"
+              ><svg class="footer__icon">
+                <use xlink:href="img/sprite.svg#icon-linkedin"></use></svg
+            ></a>
+
+            <a
+              href="https://www.instagram.com/ctnboya?igsh=MTlzeG94ZzB5d3ZycA=="
+              target="_blank"
+              ><svg class="footer__icon">
+                <use xlink:href="img/sprite.svg#icon-instagram"></use></svg
+            ></a>
+          </div>
+
+          <p class="footer__copyright">
+            &copy;<span class="year">1992</span> — CETIN BOYA
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
