@@ -28,6 +28,7 @@
 
   @include responsive(laptop-land) {
     padding: 2.9rem 3.2rem;
+    width: 100%;
   }
 
   @include responsive(tablet-land) {
@@ -42,6 +43,10 @@
 
   @include responsive(phone) {
     padding: 1.6rem;
+  }
+
+  &__logo {
+    margin-right: auto;
   }
 
   &__header {
@@ -403,10 +408,15 @@
 
   &__text-box {
     margin-bottom: 6.4rem;
+    max-width: 100%;
 
     @include responsive(big-desktop) {
-      width: 44.688%;
+      max-width: 44.688%;
       margin: 0 auto 6.4rem;
+    }
+
+    @include responsive(big-desktop) {
+      max-width: 100%;
     }
 
     @include responsive(tablet-land) {
@@ -449,11 +459,12 @@
     column-gap: 1.6rem;
 
     @include responsive(big-desktop) {
-      width: 44.688%;
+      max-width: 44.688%;
       margin: 0 auto;
     }
 
     @include responsive(laptop-land) {
+      max-width: 100%;
       grid-template-columns: repeat(auto-fit, minmax(17.1rem, 1fr));
     }
 
@@ -508,11 +519,13 @@
   padding: 2rem;
 
   @include responsive(big-desktop) {
-    width: 43.125%;
+    width: 100%;
+    max-width: 43.2%;
     margin: 0 auto 8rem;
   }
 
   @include responsive(laptop-land) {
+    max-width: 100%;
     margin: 0 3.2rem 6.4rem;
   }
 
@@ -579,6 +592,7 @@
     }
 
     @include responsive(laptop-land) {
+      max-width: 100%;
       margin-bottom: 4rem;
       padding-left: 3.2rem;
     }
@@ -614,6 +628,7 @@
     }
 
     @include responsive(laptop-land) {
+      max-width: 100%;
       grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
       padding: 0 3.2rem;
     }
@@ -729,6 +744,11 @@
       margin: 0 auto;
     }
 
+    @include responsive(laptop-land) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
     @include responsive(tablet-portrait) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -796,6 +816,14 @@
       max-width: 44.688%;
       margin: 0 auto;
     }
+
+    @include responsive(laptop-land) {
+      max-width: 100%;
+    }
+
+    @include responsive(tablet-land) {
+      row-gap: 4rem;
+    }
   }
 
   &__logo {
@@ -808,6 +836,10 @@
     @include responsive(tablet-land) {
       grid-column: 1 / -1;
       margin-bottom: 2.4rem;
+    }
+
+    @include responsive(tablet-portrait) {
+      margin-bottom: 0.8rem;
     }
   }
 
@@ -966,7 +998,8 @@
   }
 
   @include responsive(laptop-land) {
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
     padding: 6.4rem 3.2rem;
     column-gap: 1.2rem;
     row-gap: 1.2rem;
@@ -1063,6 +1096,7 @@
   }
 
   @include responsive(laptop-land) {
+    max-width: 100%;
     margin: 8rem 3.2rem 0;
     padding: 4.8rem 8rem;
   }
@@ -1160,6 +1194,7 @@
   }
 
   @include responsive(laptop-land) {
+    max-width: 100%;
     padding: 18rem 3.2rem 8rem;
   }
 
@@ -1282,6 +1317,7 @@
   }
 
   @include responsive(laptop-land) {
+    max-width: 100%;
     margin: 8rem 3.2rem;
   }
 
@@ -1334,6 +1370,10 @@
     @include responsive(big-desktop) {
       max-width: 44.688%;
       margin: 0 auto;
+    }
+
+    @include responsive(laptop-land) {
+      max-width: 100%;
     }
   }
 
@@ -1487,6 +1527,7 @@
   }
 
   @include responsive(laptop-land) {
+    max-width: 100%;
     margin: 0 3.2rem;
   }
 
@@ -1573,6 +1614,7 @@
     }
 
     @include responsive(laptop-land) {
+      max-width: 100%;
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -1620,6 +1662,10 @@
     margin: 0 auto;
   }
 
+  @include responsive(laptop-land) {
+    max-width: 100%;
+  }
+
   @include responsive(phone) {
     height: 32rem;
   }
@@ -1653,7 +1699,7 @@
 
   @include responsive(laptop-land) {
     padding: 6.4rem 3.2rem;
-    width: 95%;
+    max-width: 100%;
   }
 
   @include responsive(tablet-portrait) {

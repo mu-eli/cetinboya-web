@@ -170,7 +170,6 @@
   }
 
   @include responsive(laptop-land) {
-    grid-template-columns: repeat(auto-fit, minmax(19.2rem, 1fr));
     padding: 4.8rem 3.2rem;
   }
 
@@ -202,6 +201,18 @@
       grid-template-columns: repeat(4, 1fr);
       max-width: 44.688%;
       margin: 0 auto;
+    }
+
+    @include responsive(laptop-land) {
+      max-width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(19.2rem, 1fr));
+    }
+
+    @include responsive(tablet-portrait) {
+      max-width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3.2rem;
+      row-gap: 4rem;
     }
   }
 
@@ -350,6 +361,10 @@
       margin: 0 auto;
     }
 
+    @include responsive(laptop-land) {
+      max-width: 100%;
+    }
+
     @include responsive(tablet-portrait) {
       grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
       column-gap: 2.4rem;
@@ -485,6 +500,7 @@
   }
 
   @include responsive(laptop-land) {
+    max-width: 100%;
     padding: 6.4rem 3.2rem;
     column-gap: 2rem;
     row-gap: 2rem;
@@ -581,13 +597,11 @@
   }
 
   @include responsive(laptop-land) {
-    grid-template-columns: repeat(auto-fit, minmax(26.6rem, 1fr));
     padding: 0 3.2rem;
     column-gap: 3.2rem;
   }
 
   @include responsive(tablet-land) {
-    grid-template-columns: repeat(2, 1fr);
     height: 49.8rem;
     padding: 0 4rem;
   }
@@ -596,7 +610,7 @@
     grid-template-columns: auto;
     grid-template-rows: 0.5fr 2fr 0.5fr;
     height: 79.8rem;
-    padding: 2.4rem 3.2rem;
+    padding: 2.4rem 1.6rem;
     row-gap: 4rem;
   }
 
@@ -619,6 +633,24 @@
       height: 100%;
       max-width: 44.688%;
       margin: 0 auto;
+    }
+
+    @include responsive(laptop-land) {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 0;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    @include responsive(tablet-land) {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 4.4rem;
+    }
+
+    @include responsive(tablet-portrait) {
+      grid-template-rows: 0.5fr 2fr 0.5fr;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -708,7 +740,12 @@
       align-items: flex-start;
     }
 
+    @include responsive(tablet-portrait) {
+      flex-direction: row;
+    }
+
     @include responsive(phone) {
+      flex-direction: column;
       align-items: center;
     }
   }
@@ -730,13 +767,13 @@
     }
 
     @include responsive(tablet-portrait) {
+      max-width: 50%;
       justify-self: center;
       text-align: center;
     }
 
     @include responsive(phone) {
-      width: 100%;
-      padding: 0 3.2rem;
+      max-width: 100%;
     }
   }
 
@@ -763,19 +800,20 @@
     padding-right: 0;
   }
 
+  @include responsive(laptop-land) {
+    padding: 6.4rem 3.2rem 4rem;
+  }
+
   @include responsive(tablet-land) {
-    grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
     padding: 4.8rem 1.6rem;
   }
 
   @include responsive(tablet-portrait) {
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     padding: 6.4rem 1.6rem 4.8rem;
     row-gap: 2.4rem;
   }
 
   @include responsive(phone) {
-    grid-template-columns: 1fr;
     row-gap: 2.4rem;
     padding: 4rem 1.6rem 4.8rem;
   }
@@ -816,6 +854,11 @@
     @include responsive(big-desktop) {
       max-width: 44.688%;
       margin: 0 auto;
+    }
+
+    @include responsive(laptop-land) {
+      grid-template-columns: repeat(auto-fit, minmax(28.8rem, 1fr));
+      max-width: 100%;
     }
   }
 }
@@ -957,15 +1000,7 @@
     @include responsive(laptop-land) {
       grid-template-columns: repeat(2, 1fr);
       padding: 0;
-      max-width: 100%;
-      margin: 0;
-    }
-
-    @include responsive(tablet-land) {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 0;
-      max-width: 100%;
-      margin: 0;
+      width: 100%;
     }
 
     @include responsive(phone) {

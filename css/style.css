@@ -185,7 +185,6 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .features {
-    grid-template-columns: repeat(auto-fit, minmax(19.2rem, 1fr));
     padding: 4.8rem 3.2rem;
   }
 }
@@ -221,6 +220,20 @@ html {
     grid-template-columns: repeat(4, 1fr);
     max-width: 44.688%;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 90em) {
+  .features__container {
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(19.2rem, 1fr));
+  }
+}
+@media only screen and (max-width: 48em) {
+  .features__container {
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3.2rem;
+    row-gap: 4rem;
   }
 }
 .features__icon-box {
@@ -370,6 +383,11 @@ html {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 90em) {
+  .consult__container {
+    max-width: 100%;
+  }
+}
 @media only screen and (max-width: 48em) {
   .consult__container {
     grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
@@ -496,6 +514,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .col-5 {
+    max-width: 100%;
     padding: 6.4rem 3.2rem;
     column-gap: 2rem;
     row-gap: 2rem;
@@ -593,14 +612,12 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .col-3 {
-    grid-template-columns: repeat(auto-fit, minmax(26.6rem, 1fr));
     padding: 0 3.2rem;
     column-gap: 3.2rem;
   }
 }
 @media only screen and (max-width: 64em) {
   .col-3 {
-    grid-template-columns: repeat(2, 1fr);
     height: 49.8rem;
     padding: 0 4rem;
   }
@@ -610,7 +627,7 @@ html {
     grid-template-columns: auto;
     grid-template-rows: 0.5fr 2fr 0.5fr;
     height: 79.8rem;
-    padding: 2.4rem 3.2rem;
+    padding: 2.4rem 1.6rem;
     row-gap: 4rem;
   }
 }
@@ -635,6 +652,27 @@ html {
     height: 100%;
     max-width: 44.688%;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 90em) {
+  .col-3__container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 0;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 64em) {
+  .col-3__container {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4.4rem;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .col-3__container {
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-columns: 1fr;
   }
 }
 .col-3__img-box {
@@ -729,8 +767,14 @@ html {
     align-items: flex-start;
   }
 }
+@media only screen and (max-width: 48em) {
+  .col-3__btn {
+    flex-direction: row;
+  }
+}
 @media only screen and (max-width: 30em) {
   .col-3__btn {
+    flex-direction: column;
     align-items: center;
   }
 }
@@ -754,14 +798,14 @@ html {
 }
 @media only screen and (max-width: 48em) {
   .col-3__text-left {
+    max-width: 50%;
     justify-self: center;
     text-align: center;
   }
 }
 @media only screen and (max-width: 30em) {
   .col-3__text-left {
-    width: 100%;
-    padding: 0 3.2rem;
+    max-width: 100%;
   }
 }
 .col-3__text-right {
@@ -784,22 +828,24 @@ html {
     padding-right: 0;
   }
 }
+@media only screen and (max-width: 90em) {
+  .services-col-3 {
+    padding: 6.4rem 3.2rem 4rem;
+  }
+}
 @media only screen and (max-width: 64em) {
   .services-col-3 {
-    grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
     padding: 4.8rem 1.6rem;
   }
 }
 @media only screen and (max-width: 48em) {
   .services-col-3 {
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     padding: 6.4rem 1.6rem 4.8rem;
     row-gap: 2.4rem;
   }
 }
 @media only screen and (max-width: 30em) {
   .services-col-3 {
-    grid-template-columns: 1fr;
     row-gap: 2.4rem;
     padding: 4rem 1.6rem 4.8rem;
   }
@@ -844,6 +890,12 @@ html {
   .services-col-3__container {
     max-width: 44.688%;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 90em) {
+  .services-col-3__container {
+    grid-template-columns: repeat(auto-fit, minmax(28.8rem, 1fr));
+    max-width: 100%;
   }
 }
 
@@ -969,16 +1021,7 @@ html {
   .card__container {
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
-    max-width: 100%;
-    margin: 0;
-  }
-}
-@media only screen and (max-width: 64em) {
-  .card__container {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
-    max-width: 100%;
-    margin: 0;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 30em) {
@@ -1073,6 +1116,7 @@ html {
 @media only screen and (max-width: 90em) {
   .navigation {
     padding: 2.9rem 3.2rem;
+    width: 100%;
   }
 }
 @media only screen and (max-width: 64em) {
@@ -1091,6 +1135,9 @@ html {
   .navigation {
     padding: 1.6rem;
   }
+}
+.navigation__logo {
+  margin-right: auto;
 }
 .navigation__header {
   display: flex;
@@ -1432,11 +1479,17 @@ html {
 }
 .hero__text-box {
   margin-bottom: 6.4rem;
+  max-width: 100%;
 }
 @media only screen and (min-width: 90em) {
   .hero__text-box {
-    width: 44.688%;
+    max-width: 44.688%;
     margin: 0 auto 6.4rem;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .hero__text-box {
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 64em) {
@@ -1482,12 +1535,13 @@ html {
 }
 @media only screen and (min-width: 90em) {
   .hero__img--container {
-    width: 44.688%;
+    max-width: 44.688%;
     margin: 0 auto;
   }
 }
 @media only screen and (max-width: 90em) {
   .hero__img--container {
+    max-width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(17.1rem, 1fr));
   }
 }
@@ -1543,12 +1597,14 @@ html {
 }
 @media only screen and (min-width: 90em) {
   .banner {
-    width: 43.125%;
+    width: 100%;
+    max-width: 43.2%;
     margin: 0 auto 8rem;
   }
 }
 @media only screen and (max-width: 90em) {
   .banner {
+    max-width: 100%;
     margin: 0 3.2rem 6.4rem;
   }
 }
@@ -1618,6 +1674,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .services__heading {
+    max-width: 100%;
     margin-bottom: 4rem;
     padding-left: 3.2rem;
   }
@@ -1657,6 +1714,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .services__container {
+    max-width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr));
     padding: 0 3.2rem;
   }
@@ -1763,6 +1821,12 @@ html {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 90em) {
+  .dealership__box {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
 @media only screen and (max-width: 48em) {
   .dealership__box {
     grid-template-columns: repeat(2, 1fr);
@@ -1832,6 +1896,16 @@ html {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 90em) {
+  .footer__container {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 64em) {
+  .footer__container {
+    row-gap: 4rem;
+  }
+}
 .footer__logo {
   justify-self: center;
 }
@@ -1844,6 +1918,11 @@ html {
   .footer__logo {
     grid-column: 1/-1;
     margin-bottom: 2.4rem;
+  }
+}
+@media only screen and (max-width: 48em) {
+  .footer__logo {
+    margin-bottom: 0.8rem;
   }
 }
 .footer__img {
@@ -1996,7 +2075,8 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
     padding: 6.4rem 3.2rem;
     column-gap: 1.2rem;
     row-gap: 1.2rem;
@@ -2093,6 +2173,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .board {
+    max-width: 100%;
     margin: 8rem 3.2rem 0;
     padding: 4.8rem 8rem;
   }
@@ -2195,6 +2276,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .about {
+    max-width: 100%;
     padding: 18rem 3.2rem 8rem;
   }
 }
@@ -2320,6 +2402,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .paragraph {
+    max-width: 100%;
     margin: 8rem 3.2rem;
   }
 }
@@ -2376,6 +2459,11 @@ html {
   .hero-corp__container {
     max-width: 44.688%;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 90em) {
+  .hero-corp__container {
+    max-width: 100%;
   }
 }
 .hero-corp__secondary {
@@ -2535,6 +2623,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .reference-gall {
+    max-width: 100%;
     margin: 0 3.2rem;
   }
 }
@@ -2628,6 +2717,7 @@ html {
 }
 @media only screen and (max-width: 90em) {
   .reference-head__container {
+    max-width: 100%;
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -2674,6 +2764,11 @@ html {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 90em) {
+  .hero-sections {
+    max-width: 100%;
+  }
+}
 @media only screen and (max-width: 30em) {
   .hero-sections {
     height: 32rem;
@@ -2705,7 +2800,7 @@ html {
 @media only screen and (max-width: 90em) {
   .contact {
     padding: 6.4rem 3.2rem;
-    width: 95%;
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 48em) {
