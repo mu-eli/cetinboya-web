@@ -21,7 +21,7 @@
 }
 
 .img-hide {
-  @include responsive(tablet-portrait) {
+  @include responsive(phone) {
     display: none;
   }
 }

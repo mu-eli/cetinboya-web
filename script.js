@@ -1,41 +1,4 @@
 /////////////////////////////
-/// UPDATE FOOTER YEAR
-////////////////////////////
-document.addEventListener("DOMContentLoaded", () => {
-  const yearEl = document.querySelector(".year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-});
-
-////////////////////////////////
-/// HIGHLIGHT ACTIVE NAV LINK
-///////////////////////////////
-document.addEventListener("DOMContentLoaded", () => {
-  const currentPage = location.pathname.split("/").pop();
-  const navLinks = document.querySelectorAll(
-    ".navigation__link, .btn__contact",
-  );
-
-  navLinks.forEach((link) => {
-    const href = link.getAttribute("href");
-    const isCurrentPage =
-      href === currentPage || (currentPage === "" && href === "index.html");
-
-    if (isCurrentPage) {
-      link.classList.add("active");
-
-      // If this link is inside a dropdown, also highlight the parent link
-      const parentMenu = link.closest(".navigation__submenu");
-      if (parentMenu) {
-        const parentLink = parentMenu
-          .closest("li")
-          .querySelector(".navigation__link");
-        if (parentLink) parentLink.classList.add("active");
-      }
-    }
-  });
-});
-
-/////////////////////////////
 /// MAP STATE
 ////////////////////////////
 let map;
@@ -46,7 +9,6 @@ let markers = [];
 ////////////////////////////
 window.initMap = function () {
   const defaultLocation = { lat: 40.99233, lng: 29.12744 };
-
   map = new google.maps.Map(document.getElementById("map"), {
     center: defaultLocation,
     zoom: 12,
@@ -117,10 +79,67 @@ function setActiveCard(index, infoWindow, marker) {
   }
 }
 
-///////////////////////////////////
-/// SMOOTH SCROLL FOR ANCHOR LINKS
-//////////////////////////////////
+/////////////////////////////
+/// SINGLE INIT ENTRY POINT
+////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
+  // UPDATE FOOTER YEAR
+  const yearEl = document.querySelector(".year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // HIGHLIGHT ACTIVE NAV LINK
+  const currentPage = location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll(
+    ".navigation__link, .btn__contact",
+  );
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    const isCurrentPage =
+      href === currentPage || (currentPage === "" && href === "index.html");
+
+    if (isCurrentPage) {
+      link.classList.add("active");
+
+      const parentMenu = link.closest(".navigation__submenu");
+      if (parentMenu) {
+        const parentLink = parentMenu
+          .closest("li")
+          .querySelector(".navigation__link");
+        if (parentLink) parentLink.classList.add("active");
+      }
+    }
+  });
+
+  // DROPDOWN TOGGLE
+  // Null-guarded: this block only runs on pages that have the dropdown
+  const dropdownBtn = document.querySelector(".navigation__dropdown-btn");
+  const submenu = document.querySelector(".navigation__submenu");
+  const icon = document.querySelector(".navigation__icon-up");
+
+  if (dropdownBtn && submenu && icon) {
+    dropdownBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const isOpen =
+        submenu.style.height !== "0px" && submenu.style.height !== "";
+
+      submenu.style.transition = "height 0.3s ease, opacity 0.3s ease";
+
+      if (!isOpen) {
+        submenu.style.opacity = 1;
+        submenu.style.marginTop = "24px";
+        submenu.style.height = submenu.scrollHeight + "px";
+        icon.style.transform = "rotate(0deg)";
+      } else {
+        submenu.style.height = "0";
+        submenu.style.marginTop = "0";
+        submenu.style.opacity = 0;
+        icon.style.transform = "rotate(180deg)";
+      }
+    });
+  }
+
+  // SMOOTH SCROLL FOR FOOTER ANCHOR LINKS
   document.querySelectorAll('.footer__item a[href*="#"]').forEach((link) => {
     link.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href").split("#")[1];
@@ -139,12 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
 
-//////////////////////////////////////////////
-/// ACTIVATE CARD FROM URL HASH ON PAGE LOAD
-/////////////////////////////////////////////
-window.addEventListener("DOMContentLoaded", () => {
+  // ACTIVATE CARD FROM URL HASH ON PAGE LOAD
   function activateFromHash() {
     const hash = window.location.hash;
     if (!hash) return;
@@ -163,38 +178,35 @@ window.addEventListener("DOMContentLoaded", () => {
 
   activateFromHash();
   window.addEventListener("hashchange", activateFromHash);
-});
 
-/////////////////////////////
-/// FORM TOGGLE
-////////////////////////////
-document.addEventListener("DOMContentLoaded", () => {
+  // FORM TOGGLE
+  // Null-guarded: this block only runs on contact.html
   const companyBtn = document.getElementById("compBtn");
   const personBtn = document.getElementById("personBtn");
   const companyForm = document.getElementById("companyForm");
   const personForm = document.getElementById("personForm");
 
-  function toggleForm(showForm, hideForm, activeBtn, inactiveBtn) {
-    showForm.classList.add("active");
-    hideForm.classList.remove("active");
-    activeBtn.classList.add("active");
-    inactiveBtn.classList.remove("active");
+  if (companyBtn && personBtn && companyForm && personForm) {
+    function toggleForm(showForm, hideForm, activeBtn, inactiveBtn) {
+      showForm.classList.add("active");
+      hideForm.classList.remove("active");
+      activeBtn.classList.add("active");
+      inactiveBtn.classList.remove("active");
 
-    const toggle = document.querySelector(".cont-form__toggle");
-    toggle.style.maxWidth = showForm === personForm ? "50rem" : "76.8rem";
+      const toggle = document.querySelector(".cont-form__toggle");
+      toggle.style.maxWidth = showForm === personForm ? "50rem" : "76.8rem";
+    }
+
+    companyBtn.addEventListener("click", () =>
+      toggleForm(companyForm, personForm, companyBtn, personBtn),
+    );
+
+    personBtn.addEventListener("click", () =>
+      toggleForm(personForm, companyForm, personBtn, companyBtn),
+    );
   }
 
-  companyBtn.addEventListener("click", () =>
-    toggleForm(companyForm, personForm, companyBtn, personBtn),
-  );
-
-  personBtn.addEventListener("click", () =>
-    toggleForm(personForm, companyForm, personBtn, companyBtn),
-  );
-
-  /////////////////////////////
-  /// FORM SUBMISSION
-  ////////////////////////////
+  // FORM SUBMISSION
   const forms = document.querySelectorAll(".form");
 
   forms.forEach((form) => {
@@ -202,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const submitBtn = form.querySelector("button[type='submit']");
-      const messageDiv = form.querySelector(".form-message");
+      const messageDiv = form.querySelector(".form__message"); // ✅ fixed selector
 
       // Clear any previous message
       messageDiv.textContent = "";
@@ -218,6 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (formData.get("website")) {
         submitBtn.disabled = false;
         submitBtn.textContent = "Gönder";
+        form.reset();
         return;
       }
 
@@ -248,25 +261,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
-
-const dropdownBtn = document.querySelector(".navigation__dropdown-btn");
-const submenu = document.querySelector(".navigation__submenu");
-const icon = document.querySelector(".navigation__icon-up");
-
-dropdownBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (submenu.style.height === "0px" || submenu.style.height === "") {
-    submenu.style.transition = "height 0.3s ease, opacity 0.3s ease";
-    submenu.style.opacity = 1;
-    submenu.style.marginTop = "24px";
-    submenu.style.height = submenu.scrollHeight + "px";
-    icon.style.transform = "rotate(0deg)";
-  } else {
-    submenu.style.transition = "height 0.3s ease, opacity 0.3s ease";
-    submenu.style.height = "0";
-    submenu.style.marginTop = "0";
-    submenu.style.opacity = 0;
-    icon.style.transform = "rotate(180deg)";
-  }
 });

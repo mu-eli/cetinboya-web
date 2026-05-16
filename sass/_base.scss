@@ -1,16 +1,12 @@
 $color-primary: #005bbb;
 
-$color-blue-dark-1: #0052a8;
-$color-blue-dark-2: #004996;
-$color-blue-dark-3: #004083;
-$color-blue-dark-4: #003770;
 $color-blue-dark-5: #003c61;
 $color-blue-dark-6: #0a3461;
 
-$color-blue-light-1: #1a6bc2;
-$color-blue-light-2: #337cc9;
-$color-blue-light-3: #4d8ccf;
-$color-blue-light-4: #669dd6;
+// $color-blue-light-1: #1a6bc2;
+// $color-blue-light-2: #337cc9;
+// $color-blue-light-3: #4d8ccf;
+// $color-blue-light-4: #669dd6;
 
 $color-grey-bg-1: #f7f8f9;
 $color-grey-bg-2: #f1f2f4;
@@ -34,23 +30,18 @@ $radius-big: 0.8rem;
 
 @mixin responsive($bp) {
   @if $bp == phone {
-    @media only screen and (max-width: 30em) {
-      // 480px
+    @media only screen and (max-width: 29.9375em) {
+      // 479px
       @content;
     }
   } @else if $bp == tablet-portrait {
-    @media only screen and (max-width: 48em) {
-      // 768px
+    @media only screen and (max-width: 47.9375em) {
+      // 767px
       @content;
     }
   } @else if $bp == tablet-land {
-    @media only screen and (max-width: 64em) {
-      // 1024px
-      @content;
-    }
-  } @else if $bp == laptop-land {
-    @media only screen and (max-width: 90em) {
-      // 1440px
+    @media only screen and (max-width: 63.9375em) {
+      // 1023px
       @content;
     }
   } @else if $bp == big-desktop {
@@ -83,7 +74,7 @@ html {
 }
 
 .container {
-  max-width: 144rem;
+  max-width: 143.9rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
