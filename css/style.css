@@ -617,8 +617,8 @@ html {
 }
 @media only screen and (max-width: 63.9375em) {
   .col-3__container {
-    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 21.8rem;
     column-gap: 4.4rem;
   }
 }
@@ -696,6 +696,11 @@ html {
   flex-direction: column;
   gap: 2.4rem;
   align-self: flex-start;
+}
+@media only screen and (min-width: 90em) {
+  .col-3__box {
+    align-self: center;
+  }
 }
 @media only screen and (max-width: 63.9375em) {
   .col-3__box {

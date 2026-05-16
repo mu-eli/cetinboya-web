@@ -603,8 +603,9 @@
     }
 
     @include responsive(tablet-land) {
-      grid-template-rows: repeat(2, 1fr);
+      // grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 21.8rem;
       column-gap: 4.4rem;
     }
 
@@ -679,6 +680,10 @@
     flex-direction: column;
     gap: 2.4rem;
     align-self: flex-start;
+
+    @include responsive(big-desktop) {
+      align-self: center;
+    }
 
     @include responsive(tablet-land) {
       align-self: self-start;
