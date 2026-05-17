@@ -3,79 +3,92 @@
 ////////////////////////////
 let map;
 let markers = [];
+let pendingHashActivation = null;
+let infoWindow;
+const cardNames = [];
 
 /////////////////////////////
 /// INITIALIZE GOOGLE MAP
 ////////////////////////////
 window.initMap = function () {
+  const mapEl = document.getElementById("map");
+  if (!mapEl) return;
+
   const defaultLocation = { lat: 40.99233, lng: 29.12744 };
-  map = new google.maps.Map(document.getElementById("map"), {
+
+  map = new google.maps.Map(mapEl, {
     center: defaultLocation,
     zoom: 12,
+    mapId: "3861730a29e0b5fc16da4db2",
   });
 
-  const infoWindow = new google.maps.InfoWindow();
+  infoWindow = new google.maps.InfoWindow();
   const cards = document.querySelectorAll(".card__style");
 
   cards.forEach((card, index) => {
     const lat = parseFloat(card.dataset.lat);
     const lng = parseFloat(card.dataset.lng);
 
-    // Place a marker on the map for this card
-    const marker = new google.maps.Marker({
+    const cardName = card.querySelector(".card__name")?.innerText || ""; // ← add here
+    cardNames.push(cardName);
+
+    const marker = new google.maps.marker.AdvancedMarkerElement({
       position: { lat, lng },
       map,
-      title: card.querySelector("h4")?.innerText || "",
+      title: cardName,
     });
 
     markers.push(marker);
 
-    // Clicking the map marker activates the matching card
-    marker.addListener("click", () => {
-      setActiveCard(index, infoWindow, marker);
+    marker.addEventListener("gmp-click", () => {
+      setActiveCard(index);
     });
 
-    // Clicking the card itself also activates it
     card.addEventListener("click", () => {
-      setActiveCard(index, infoWindow, marker);
+      setActiveCard(index);
     });
   });
+
+  if (pendingHashActivation !== null) {
+    setActiveCard(pendingHashActivation);
+    pendingHashActivation = null;
+  }
 };
 
 /////////////////////////////
 /// ACTIVATE A CARD
 ////////////////////////////
-function setActiveCard(index, infoWindow, marker) {
-  const cards = document.querySelectorAll(".card__style");
+function setActiveCard(index) {
+  if (!map) {
+    pendingHashActivation = index;
+    return;
+  }
 
-  // Toggle active class: only the clicked card gets it
+  const cards = document.querySelectorAll(".card__style");
+  if (!cards[index]) return;
+
   cards.forEach((c, i) => c.classList.toggle("active", i === index));
 
   const lat = parseFloat(cards[index].dataset.lat);
   const lng = parseFloat(cards[index].dataset.lng);
 
-  // Move the map view to this location
   map.setCenter({ lat, lng });
   map.setZoom(15);
 
-  // Bounce the correct marker, stop after 2 seconds
-  markers.forEach((m, i) =>
-    m.setAnimation(i === index ? google.maps.Animation.BOUNCE : null),
-  );
-  setTimeout(() => markers[index].setAnimation(null), 2000);
-
-  // Show a popup with a link to Google Maps
+  const marker = markers[index];
+  const cardName = cardNames[index];
   if (infoWindow && marker) {
     const mapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
+    infoWindow.close();
     infoWindow.setContent(`
       <div style="font-size:14px;">
-        <strong>${marker.getTitle()}</strong><br>
+        <strong style="display:block; color:#005bbb; font-weight:500; margin-bottom:4px;">${cardName}</strong><br>
         <a href="${mapsUrl}" target="_blank" style="color:#005bbb;">
           View on Google Maps
         </a>
       </div>
     `);
-    infoWindow.open(map, marker);
+    infoWindow.open({ map, anchor: marker });
   }
 }
 
@@ -112,7 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // DROPDOWN TOGGLE
-  // Null-guarded: this block only runs on pages that have the dropdown
   const dropdownBtn = document.querySelector(".navigation__dropdown-btn");
   const submenu = document.querySelector(".navigation__submenu");
   const icon = document.querySelector(".navigation__icon-up");
@@ -149,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
 
-        // If on contact.html, also visually activate that card
         if (window.location.pathname.includes("contact.html")) {
           const cards = Array.from(document.querySelectorAll(".card__style"));
           const index = cards.indexOf(targetEl);
@@ -180,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("hashchange", activateFromHash);
 
   // FORM TOGGLE
-  // Null-guarded: this block only runs on contact.html
   const companyBtn = document.getElementById("compBtn");
   const personBtn = document.getElementById("personBtn");
   const companyForm = document.getElementById("companyForm");
@@ -194,7 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
       inactiveBtn.classList.remove("active");
 
       const toggle = document.querySelector(".cont-form__toggle");
-      toggle.style.maxWidth = showForm === personForm ? "50rem" : "76.8rem";
+      if (toggle) {
+        toggle.style.maxWidth = showForm === personForm ? "50rem" : "76.8rem";
+      }
     }
 
     companyBtn.addEventListener("click", () =>
@@ -214,19 +226,18 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const submitBtn = form.querySelector("button[type='submit']");
-      const messageDiv = form.querySelector(".form__message"); // ✅ fixed selector
+      const messageDiv = form.querySelector(".form__message");
 
-      // Clear any previous message
+      if (!submitBtn || !messageDiv) return;
+
       messageDiv.textContent = "";
       messageDiv.className = "form__message";
 
-      // Disable button while sending
       submitBtn.disabled = true;
       submitBtn.textContent = "Gönderiliyor...";
 
       const formData = new FormData(form);
 
-      // Honeypot check: if the hidden "website" field has a value, it's a bot
       if (formData.get("website")) {
         submitBtn.disabled = false;
         submitBtn.textContent = "Gönder";

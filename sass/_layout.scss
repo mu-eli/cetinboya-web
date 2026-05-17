@@ -1,7 +1,6 @@
 /////////////////////////////
 /// TOP BACKGROUND
 ////////////////////////////
-
 .bg-color {
   grid-column: 1 / -1;
   display: block;
@@ -105,8 +104,6 @@
     @include responsive(tablet-land) {
       flex-direction: column;
       gap: 3.2rem;
-      // align-items: flex-start;
-      // justify-content: flex-start;
       padding-left: 3.2rem;
     }
 
@@ -377,7 +374,6 @@
 /////////////////////////////
 /// HERO
 ////////////////////////////
-
 .hero {
   background-image: radial-gradient($color-primary, $color-black);
   grid-column: 1 / -1;
@@ -451,7 +447,6 @@
     column-gap: 1.6rem;
 
     @include responsive(big-desktop) {
-      // max-width: 44.688%;
       max-width: 114.4rem;
       margin: 0 auto;
     }
@@ -491,7 +486,6 @@
 /////////////////////////////
 /// BANNER
 ////////////////////////////
-
 .banner {
   grid-column: 1 / -1;
   max-width: 100%;
@@ -555,7 +549,6 @@
 /////////////////////////////
 /// SERVICES
 ////////////////////////////
-
 .services {
   grid-column: 1 / -1;
   margin-bottom: 6.4rem;
@@ -633,7 +626,6 @@
 /////////////////////////////
 /// REFERENCES
 ////////////////////////////
-
 .references {
   color: $color-blue-dark-6;
   background-color: $color-grey-bg-1;
@@ -676,7 +668,6 @@
 /////////////////////////////
 ///  DEALERSHIP
 ////////////////////////////
-
 .dealership {
   grid-column: 1 / -1;
   color: $color-blue-dark-6;
@@ -746,7 +737,6 @@
 /////////////////////////////
 /// FOOTER
 ////////////////////////////
-
 .footer {
   grid-column: 1 / -1;
   background-color: $color-grey-bg-1;
@@ -836,7 +826,6 @@
 
     @include responsive(tablet-portrait) {
       margin-bottom: 1.6rem;
-
       font-size: 1.6rem;
     }
 
@@ -938,7 +927,6 @@
 /////////////////////////////
 /// CORPORATE PAGE GALLERY
 ////////////////////////////
-
 .gallery {
   grid-column: 1 / -1;
   display: grid;
@@ -1037,7 +1025,6 @@
 /////////////////////////////
 /// CORPORATE PAGE BOARD
 ////////////////////////////
-
 .board {
   grid-column: 1 / -1;
   background-color: $color-primary;
@@ -1125,7 +1112,6 @@
 /////////////////////////////
 /// CORPORATE PAGE ABOUT
 ////////////////////////////
-
 .about {
   grid-column: 1 / -1;
   color: $color-blue-dark-6;
@@ -1244,7 +1230,6 @@
 /////////////////////////////
 /// CORPORATE PAGE PARAGRAPH
 ////////////////////////////
-
 .paragraph {
   grid-column: 1 / -1;
   font-size: 2.4rem;
@@ -1274,7 +1259,6 @@
 /////////////////////////////
 /// CORPORATE PAGE HERO
 ////////////////////////////
-
 .hero-corp {
   grid-column: 1 / -1;
   background-image: radial-gradient($color-primary, $color-black);
@@ -1428,7 +1412,6 @@
 /////////////////////////////
 /// REFERENCE PAGE GALLERY
 ////////////////////////////
-
 .reference-gall {
   grid-column: 1 / -1;
   display: grid;
@@ -1484,7 +1467,6 @@
 /////////////////////////////
 /// REFERENCE PAGE HEAD
 ////////////////////////////
-
 .reference-head {
   grid-column: 1 / -1;
   color: $color-blue-dark-6;
@@ -1557,7 +1539,6 @@
 /////////////////////////////
 /// AUTOMATIVE PAGE HERO
 ////////////////////////////
-
 .hero-sections {
   grid-column: 1 / -1;
   background-size: cover;
@@ -1575,6 +1556,7 @@
   &__img {
     width: 100%;
     height: 56rem;
+    height: fit-content;
     object-fit: cover;
   }
 }
@@ -1582,7 +1564,6 @@
 /////////////////////////////
 /// CONTACT SECTION
 ////////////////////////////
-
 .contact {
   grid-column: 1 / -1;
   color: $color-blue-dark-6;
@@ -1626,7 +1607,6 @@
 /////////////////////////////
 /// FORM
 ////////////////////////////
-
 .cont-form {
   grid-column: 1 / -1;
   width: 68rem;
@@ -1818,7 +1798,6 @@
 /////////////////////////////
 /// MAP
 ////////////////////////////
-
 #map {
   grid-column: 1 / -1;
   height: 44.9rem;
@@ -1834,7 +1813,6 @@
 /////////////////////////////
 /// CATALOG
 ////////////////////////////
-
 .soon {
   grid-column: 1 / -1;
   background-color: #f5f5f5;

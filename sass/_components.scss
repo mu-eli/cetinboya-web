@@ -1,7 +1,6 @@
 /////////////////////////////
 /// BUTTON
 ////////////////////////////
-
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -150,7 +149,6 @@
 /////////////////////////////
 /// FEATURES
 ////////////////////////////
-
 .features {
   grid-column: 1 / -1;
   padding: 8rem 3.2rem;
@@ -178,7 +176,6 @@
     column-gap: 6.4rem;
 
     @include responsive(big-desktop) {
-      // grid-template-columns: repeat(4, 1fr);
       max-width: 114.4rem;
       margin: 0 auto;
     }
@@ -423,7 +420,6 @@
 /////////////////////////////
 /// IMAGE TEXT
 ////////////////////////////
-
 .img-text {
   color: $color-white;
   line-height: 1.2;
@@ -466,7 +462,6 @@
 /////////////////////////////
 /// 1 of 5 COLUMN
 ////////////////////////////
-
 .col-5 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -556,7 +551,6 @@
 /////////////////////////////
 /// 1 of 3 COLUMN
 ////////////////////////////
-
 .col-3 {
   color: $color-blue-dark-6;
   background-color: $color-grey-bg-1;
@@ -603,7 +597,6 @@
     }
 
     @include responsive(tablet-land) {
-      // grid-template-rows: repeat(2, 1fr);
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: 21.8rem;
       column-gap: 4.4rem;
@@ -753,7 +746,6 @@
 /////////////////////////////
 /// 1 of 3 COLUMN SERVICES
 ////////////////////////////
-
 .services-col-3 {
   padding: 8rem 14.8rem 6.4rem;
   color: $color-blue-dark-6;
@@ -829,7 +821,6 @@
 /////////////////////////////
 /// SERVICES CARDS
 ////////////////////////////
-
 .services {
   &__card-1,
   &__card-2,
@@ -921,7 +912,6 @@
 /////////////////////////////
 /// LOCATION CARDS
 ////////////////////////////
-
 .card {
   grid-column: 1 / -1;
   padding: 6.4rem 14.8rem 5.4rem;
