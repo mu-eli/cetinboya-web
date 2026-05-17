@@ -1,3 +1,10 @@
+const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
+const script = document.createElement("script");
+script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=marker&callback=initMap&loading=async`;
+script.async = true;
+document.head.appendChild(script);
+
 /////////////////////////////
 /// MAP STATE
 ////////////////////////////
